@@ -16,14 +16,13 @@ let package = Package(
         .package(url: "https://github.com/krzyzanowskim/CryptoSwift.git", .upToNextMinor(from: "1.5.1"))
     ],
     targets: [
-        .target(name: "SepA"),
         .target(
             name: "Web3Core",
-            dependencies: ["BigInt", "SepA", "CryptoSwift"]
+            dependencies: ["BigInt", "CryptoSwift"]
         ),
         .target(
             name: "web3swift",
-            dependencies: ["Web3Core", "BigInt", "SepA"],
+            dependencies: ["Web3Core", "BigInt"],
             resources: [
                 .copy("./Browser/browser.js"),
                 .copy("./Browser/browser.min.js"),
